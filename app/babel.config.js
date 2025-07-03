@@ -20,6 +20,7 @@ const plugins = [
       },
     },
   ],
+  ["react-native-worklets-core/plugin"],
 ]
 
 if (process.env['ENV'] === 'prod') {

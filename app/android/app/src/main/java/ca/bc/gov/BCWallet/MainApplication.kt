@@ -12,6 +12,8 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 
 import com.facebook.soloader.SoLoader
 import org.wonday.orientation.OrientationActivityLifecycle
+import ca.bc.gov.BCWallet.dualbarcodescanner.DualBarcodeScannerPluginPackage
+import ca.bc.gov.BCWallet.zebradualbarcodescanner.zebraDualBarcodeScannerPluginPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -21,7 +23,10 @@ class MainApplication : Application(), ReactApplication {
                 PackageList(this).packages.apply {
                     // Packages that cannot be autolinked yet can be added manually here, for example:
                     // add(MyReactNativePackage())
+                    add(DualBarcodeScannerPluginPackage());
+                    add(zebraDualBarcodeScannerPluginPackage())
                 }
+            
             
             override fun getJSMainModuleName(): String = "index"
             override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
